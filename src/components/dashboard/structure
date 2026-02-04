@@ -1,0 +1,98 @@
+src/
+│
+├── app/
+│   ├── layout.js                # Root layout (fonts, toaster, auth)
+│   ├── globals.css
+│   │
+│   ├── auth/
+│   │   ├── login/
+│   │   │   └── page.js
+│   │   └── register/
+│   │       └── page.js
+│   │
+│   ├── dashboards/
+│   │   ├── admin/
+│   │   │   ├── layout.js        # Admin sidebar + header
+│   │   │   ├── page.js          # Admin dashboard (stats)
+│   │   │   │
+│   │   │   ├── students/
+│   │   │   │   ├── page.js              # Student list
+│   │   │   │   ├── add/
+│   │   │   │   │   └── page.js           # Add student
+│   │   │   │   └── edit/
+│   │   │   │       └── [id]/
+│   │   │   │           └── page.js       # Edit student
+│   │   │   │
+│   │   │   ├── classmanagement/
+│   │   │   │   ├── classlist/
+│   │   │   │   │   └── page.js
+│   │   │   │   ├── addclass/
+│   │   │   │   │   └── page.js
+│   │   │   │   └── editclass/
+│   │   │   │       └── [id]/
+│   │   │   │           └── page.js
+│   │   │   │
+│   │   │   ├── sections/
+│   │   │   │   ├── page.js
+│   │   │   │   ├── add/
+│   │   │   │   │   └── page.js
+│   │   │   │   └── edit/
+│   │   │   │       └── [id]/page.js
+│   │   │   │
+│   │   │   ├── teachers/
+│   │   │   │   ├── page.js
+│   │   │   │   ├── add/page.js
+│   │   │   │   └── edit/[id]/page.js
+│   │   │   │
+│   │   │   ├── subjects/
+│   │   │   │   ├── page.js
+│   │   │   │   ├── add/page.js
+│   │   │   │   └── edit/[id]/page.js
+│   │   │   │
+│   │   │   ├── attendance/
+│   │   │   │   └── page.js
+│   │   │   │
+│   │   │   ├── exams/
+│   │   │   │   ├── page.js
+│   │   │   │   └── marks/
+│   │   │   │       └── page.js
+│   │   │   │
+│   │   │   └── fees/
+│   │   │       └── page.js
+│   │   │
+│   │   ├── teacher/
+│   │   │   ├── layout.js
+│   │   │   └── page.js
+│   │   │
+│   │   └── parent/
+│   │       ├── layout.js
+│   │       └── page.js
+│   │
+│   └── api/                     # Optional server routes
+│
+├── components/
+│   ├── ui/
+│   │   ├── Button.jsx
+│   │   ├── Input.jsx
+│   │   ├── Modal.jsx
+│   │   └── Table.jsx
+│   │
+│   ├── sidebar/
+│   │   └── AdminSidebar.jsx
+│   │
+│   ├── header/
+│   │   └── DashboardHeader.jsx
+│   │
+│   └── forms/
+│       ├── StudentForm.jsx
+│       ├── ClassForm.jsx
+│       ├── SectionForm.jsx
+│       └── TeacherForm.jsx
+│
+├── lib/
+│   ├── supabaseClient.js
+│   └── auth.js
+│
+└── utils/
+    ├── constants.js
+    └── helpers.js
