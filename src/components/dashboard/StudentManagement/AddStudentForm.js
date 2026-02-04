@@ -267,7 +267,7 @@ export default function AddStudentForm() {
       .single();
 
     if (existingParent) {
-      parentName = existingParent.id;
+      parentName = existingParent.name;
     } else {
       // Insert new parent
       const { data: newParent, error: parentError } = await supabase
