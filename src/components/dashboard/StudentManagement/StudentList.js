@@ -147,7 +147,7 @@ export default function StudentList() {
         gender,
         email,
         address,
-        parent:parents (id, name),
+        parents, (id, name),
         classes (id, name)
       `);
 
