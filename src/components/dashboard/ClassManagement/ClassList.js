@@ -145,7 +145,7 @@ export default function ClassList() {
         </button>
       </div>
       <div className="bg-white p-4 rounded-md shadow">
-        <p className="text-sm text-gray-600">Manage your classes here.</p>
+        <p className="text-sm text-gray-600 mb-4">Manage your classes here.</p>
      
       <table className="w-full border-collapse border border-gray-300 bg-white">
         <thead className="bg-gray-200">

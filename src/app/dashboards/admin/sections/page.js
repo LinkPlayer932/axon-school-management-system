@@ -13,9 +13,7 @@ export default function SectionListPage() {
   }, []);
 
   const fetchSections = async () => {
-    const { data, error } = await supabase
-      .from("sections")
-      .select(`
+    const { data, error } = await supabase.from("sections").select(`
         id,
         name,
         classes ( name )
@@ -32,10 +30,7 @@ export default function SectionListPage() {
   const handleDelete = async (id) => {
     if (!confirm("Delete this section?")) return;
 
-    const { error } = await supabase
-      .from("sections")
-      .delete()
-      .eq("id", id);
+    const { error } = await supabase.from("sections").delete().eq("id", id);
 
     if (error) {
       toast.error(error.message);
@@ -51,9 +46,7 @@ export default function SectionListPage() {
       <div className="flex justify-between items-center mb-4">
         <h1 className="text-xl font-semibold">Sections</h1>
         <button
-          onClick={() =>
-            router.push("/dashboards/admin/sections/add")
-          }
+          onClick={() => router.push("/dashboards/admin/sections/add")}
           className="bg-green-600 text-white px-4 py-2 rounded"
         >
           Add Section
@@ -65,34 +58,21 @@ export default function SectionListPage() {
           <tr>
             <th className="border p-2">Section</th>
             <th className="border p-2">Class</th>
-            <th className="border p-2">Actions</th>
+            {/* <th className="border p-2">Actions</th> */}
           </tr>
         </thead>
         <tbody>
           {sections.map((s) => (
             <tr key={s.id}>
-              <td className="border p-2">{s.name}</td>
-              <td className="border p-2">
-                {s.classes?.name || "-"}
+              <td
+                className="border p-2 cursor-pointer"
+                onClick={() =>
+                  router.push(`/dashboards/admin/sections/edit/${s.id}`)
+                }
+              >
+                {s.name}
               </td>
-              <td className="border p-2 space-x-2">
-                <button
-                  className="bg-green-800 hover:bg-green-500 text-white px-3 py-1 rounded"
-                  onClick={() =>
-                    router.push(
-                      `/dashboards/admin/sections/edit/${s.id}`
-                    )
-                  }
-                >
-                  Edit
-                </button>
-                <button
-                  className="bg-green-800 hover:bg-green-500 text-white px-3 py-1 rounded"
-                  onClick={() => handleDelete(s.id)}
-                >
-                  Delete
-                </button>
-              </td>
+              <td className="border p-2">{s.classes?.name || "-"}</td>
             </tr>
           ))}
         </tbody>
