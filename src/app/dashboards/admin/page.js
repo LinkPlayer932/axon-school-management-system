@@ -289,9 +289,9 @@ export default function AdminDashboard() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="rounded-xl bg-green-600  p-6 text-white shadow-lg">
+      <div className="rounded-xl  p-6 text-black dark:text-green-100 shadow-lg">
         <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-        <p className="mt-1 text-white">
+        <p className="mt-1 text-green-700">
           Welcome back, <span className="font-semibold">{user.email}</span>
         </p>
       </div>
