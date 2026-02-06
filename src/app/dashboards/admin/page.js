@@ -289,7 +289,7 @@ export default function AdminDashboard() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="rounded-xl bg-gradient-to-r from-green-600 to-green-700 p-6 text-white shadow-lg">
+      <div className="rounded-xl bg-green-600  p-6 text-white shadow-lg">
         <h1 className="text-3xl font-bold">Admin Dashboard</h1>
         <p className="mt-1 text-white">
           Welcome back, <span className="font-semibold">{user.email}</span>
@@ -312,28 +312,28 @@ export default function AdminDashboard() {
           title="Students"
           value={stats.students.toString()}
           subtitle="Total Students"
-          color="bg-cyan-500"
+          color="bg-green-600"
           href="/dashboards/admin/studentmanagement/studentlist"
         />
         <StatCard
           title="Classes"
           value={stats.classes.toString()}
           subtitle="Total Classes"
-          color="bg-purple-500"
+          color="bg-green-700"
           href="/dashboards/admin/classmanagement/classlist"
         />
         <StatCard
           title="Exams"
           value={stats.exams.toString()}
           subtitle="Total Exams"
-          color="bg-indigo-500"
+          color="bg-green-500"
           href="/dashboards/admin/exams"
         />
         <StatCard
           title="Attendance"
           value={stats.attendance.toString()}
           subtitle="This Month"
-          color="bg-blue-500"
+          color="bg-green-800"
           href="/dashboards/admin/attendance"
         />
       </div>
