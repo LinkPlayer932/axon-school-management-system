@@ -21,6 +21,7 @@ export default function SubjectList() {
         id,
         name,
         classes ( name )
+        sections ( name )
       `);
 
     if (error) {
@@ -57,13 +58,14 @@ export default function SubjectList() {
             <tr>
               <th className="border p-2">Name</th>
               <th className="border p-2">Class</th>
+              <th className="border p-2">Sections</th>
             </tr>
           </thead>
           <tbody>
             {subjects.map((s) => (
               <tr key={s.id}>
                 <td
-                  className="border p-2 text-blue-600 cursor-pointer underline"
+                  className="border p-2 text-black cursor-pointer"
                   onClick={() =>
                     router.push(
                       `/dashboards/admin/subjects/edit/${s.id}`
@@ -74,6 +76,9 @@ export default function SubjectList() {
                 </td>
                 <td className="border p-2">
                   {s.classes?.name || "-"}
+                </td>
+                <td className="border p-2">
+                  {s.sections?.map((section) => section.name).join(", ") || "-"}
                 </td>
               </tr>
             ))}

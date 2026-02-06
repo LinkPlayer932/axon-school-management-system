@@ -55,6 +55,7 @@ export default function Navbar() {
       <div className="flex items-center gap-4">
         <FaBars className="text-white text-xl cursor-pointer lg:hidden" />
         <h1 className="text-xl font-bold tracking-wide text-white">Axon School MS</h1>
+        
       </div>
 
       {/* SEARCH */}

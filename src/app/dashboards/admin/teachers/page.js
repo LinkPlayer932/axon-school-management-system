@@ -171,7 +171,7 @@ export default function TeachersPage() {
             {teachers.map((t) => (
               <tr key={t.id}>
                 <td
-                  className="border p-2 text-blue-600 cursor-pointer underline"
+                  className="border p-2 text-black cursor-pointer"
                   onClick={() =>
                     router.push(`/dashboards/admin/teachers/edit/${t.id}`)
 

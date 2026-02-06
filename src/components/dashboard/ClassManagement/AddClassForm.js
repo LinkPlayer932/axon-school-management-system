@@ -99,7 +99,7 @@ export default function AddClassForm() {
       }
     }
 
-    toast.success("✅ Class and sections added successfully!");
+    toast.success("Class and sections added successfully!");
     router.push("/dashboards/admin/classmanagement/classlist");
   };
 
