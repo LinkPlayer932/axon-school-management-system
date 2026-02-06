@@ -144,13 +144,15 @@ export default function ClassList() {
           Add Class
         </button>
       </div>
-
+      <div className="bg-white p-4 rounded-md shadow">
+        <p className="text-sm text-gray-600">Manage your classes here.</p>
+     
       <table className="w-full border-collapse border border-gray-300 bg-white">
         <thead className="bg-gray-200">
           <tr>
             <th className="border px-2 py-1">Name</th>
             <th className="border px-2 py-1">Sections</th>
-            <th className="border px-2 py-1">Actions</th>
+            {/* <th className="border px-2 py-1">Actions</th> */}
           </tr>
         </thead>
         <tbody>
@@ -174,7 +176,7 @@ export default function ClassList() {
                 <td className="border px-2 py-1">
                   {c.sections?.map((s) => s.room_no).join(", ") || "-"}
                 </td>
-                <td className="border px-2 py-1 text-center">
+                {/* <td className="border px-2 py-1 text-center">
                   <button
                     onClick={() => handleDelete(c.id)}
                     disabled={deletingId === c.id}
@@ -182,12 +184,14 @@ export default function ClassList() {
                   >
                     {deletingId === c.id ? "Deleting..." : "Delete"}
                   </button>
-                </td>
+                </td> */}
               </tr>
             ))
           )}
         </tbody>
       </table>
+         </div>
+
     </div>
   );
 }

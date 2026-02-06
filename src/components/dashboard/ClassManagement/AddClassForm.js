@@ -52,7 +52,7 @@ import { useRouter } from "next/navigation";
 
 export default function AddClassForm() {
   const [name, setName] = useState("");
-  const [sections, setSections] = useState([{ name: "" }]); 
+  const [sections, setSections] = useState([{ name: "" }]);
   const router = useRouter();
 
   const handleSectionChange = (index, value) => {
@@ -106,7 +106,10 @@ export default function AddClassForm() {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-xl font-semibold mb-4">Add Class</h1>
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-6 rounded shadow-md space-y-4"
+      >
         <div>
           <label className="block mb-2 font-semibold">Class Name *</label>
           <input
@@ -139,20 +142,21 @@ export default function AddClassForm() {
           <button
             type="button"
             onClick={addSection}
-            className="bg-green-800 hover:bg-green-600 text-white px-4 py-1 rounded"
+            className="bg-green-800 hover:bg-green-600 text-white px-4 py-1 rounded-full mt-2"
           >
             + Add Section
           </button>
         </div>
-
-        <button
-          type="submit"
-          className="bg-green-800 hover:bg-green-600 text-white px-6 py-2 rounded-md"
-        >
-          Add Class
-        </button>
+        <div className="flex justify-end">
+          {" "} 
+          <button
+            type="submit"
+            className="bg-green-800 hover:bg-green-600 text-white px-6 py-2 text-lg rounded-full"
+          >
+            Add Class
+          </button>
+        </div>
       </form>
     </div>
   );
 }
- 

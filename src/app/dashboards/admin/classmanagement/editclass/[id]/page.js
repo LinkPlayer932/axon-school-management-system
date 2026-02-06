@@ -61,7 +61,7 @@ export default function EditClassPage() {
     router.push("/dashboards/admin/classmanagement/classlist");
   };
 
-   const handleDelete = async () => {
+  const handleDelete = async () => {
     const { error } = await supabase.from("classes").delete().eq("id", id);
 
     if (error) {
@@ -89,9 +89,7 @@ export default function EditClassPage() {
           className="w-full border px-3 py-2 rounded mb-4"
         />
 
-        <label className="block mb-2">
-          Sections (comma separated)
-        </label>
+        <label className="block mb-2">Sections (comma separated)</label>
         <input
           name="sections"
           value={formData.sections}
@@ -100,22 +98,23 @@ export default function EditClassPage() {
           className="w-full border px-3 py-2 rounded mb-4"
         />
 
-        <button
-          type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded"
-        >
-          Update Class
-        </button>
-
-                <div className="mt-6 text-right">
+        <div className=" flex justify-end gap-4 mt-6 text-right">
+          <button
+            type="submit"
+            className="bg-green-800 hover:bg-green-600 text-white px-6 py-2 rounded"
+          >
+            Update Class
+          </button>
           <button
             type="button"
             onClick={() => {
-              if (window.confirm("Are you sure you want to delete this class?")) {
+              if (
+                window.confirm("Are you sure you want to delete this class?")
+              ) {
                 handleDelete();
               }
             }}
-            className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md"
+            className="bg-green-800 hover:bg-green-600 text-white px-6 py-2 rounded-md"
           >
             Delete Class
           </button>
